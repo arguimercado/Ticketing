@@ -12,11 +12,8 @@ namespace Api.Applications.Features.Tickets.Queries.GetUserTickets
         public string Category { get; set; } = null!;
         public DateTime DateCreated { get; set; } = DateTime.Now;
         public DateTime? SubmittedDate { get; private set; }
-        public string Status { get; private set; } = TicketStatusEnum.Draft.ToString();
+        public string Status { get; private set; } = "";
 
     }
-    public record GetUserTicketQuery : IRequest<UserTicketResponse>
-
-
-
+    public record GetUserTicketQuery : IRequest<IEnumerable<UserTicketResponse>>;
 }
